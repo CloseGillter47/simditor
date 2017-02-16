@@ -183,6 +183,7 @@ class ImageButton extends Button
           result =
             success: false
 
+      result = @parseQiniuResponse(result)
       if result.success == false
         msg = result.msg || @_t('uploadFailed')
         alert msg
@@ -240,6 +241,10 @@ class ImageButton extends Button
       if @editor.body.find('img.uploading').length < 1
         @editor.uploader.trigger 'uploadready', [file, result]
 
+  parseQiniuResponse: (response) ->
+    success: true
+    msg: "上传成功"
+    file_path: "http://ohhjex6kk.bkt.clouddn.com/#{response.key}"
 
   _status: ->
     @_disableStatus()
