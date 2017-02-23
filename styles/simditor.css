@@ -741,6 +741,7 @@
   background-color: #ffffee;
 }
 .simditor .simditor-body img, .editor-style img {
+  max-width: 375px;
   margin: 0 5px;
   vertical-align: middle;
 }
